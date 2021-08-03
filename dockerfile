@@ -7,12 +7,11 @@ WORKDIR /home/node/onboardingui
 COPY package.json ./
 
 USER node
-
-RUN npm install
+RUN yarn install
 
 COPY --chown=node:node . .
 
-RUN npm build
+RUN yarn build
 
 RUN mkdir -p /home/node/onboardingapi/uiapp
 
