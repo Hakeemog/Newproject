@@ -1,0 +1,16 @@
+version: '2.4'
+services:
+
+    moove-collection:  &moove-collection
+        build: ./
+        image: moove-collection
+        cpu_shares: 2048
+        volumes:
+            - ../moove-collection:/usr/src/app/
+        command: bash -c "bash ./docker/run.sh"
+        environment: &moove-collection-env
+            - ENV=local
+        ports:
+            - 8000:8000
+        expose:
+            - "8000"
