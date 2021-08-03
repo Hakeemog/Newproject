@@ -7,7 +7,6 @@ WORKDIR /home/node/onboardingui
 COPY package.json ./
 
 USER node
-
 RUN yarn install
 
 COPY --chown=node:node . .
